@@ -1,0 +1,72 @@
+.success-container {
+    width: 100%;
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: white;
+    }
+    
+    .success-text-style {
+    font: 2em sans-serif;
+    color: green;
+    font-weight: 600;
+    }
+    .failure-text-style {
+    font: 2em sans-serif;
+    color:red;
+    font-weight: 600;
+    }
+    
+    .result-text-container {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+    background-color: white;
+    }
+    
+    .result-text-style {
+    font: 1.4em sans-serif;
+    color: black;
+    font-weight: 300;
+    }
+    
+    .planet-text-container {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 2rem;
+    background-color: white;
+    }
+    
+    .planet-text-style {
+    font: 1.4em sans-serif;
+    color: black;
+    font-weight: 600;
+    }
+    
+    .gap-container {
+    padding: 1rem;
+    background-color: white;
+    }
+    
+    .footer-container {
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    }
+    
+    .submit-button {
+    background-color: #00688B;
+    border: none;
+    color: white;
+    padding: 0.75rem 4rem 0.75rem 4rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2em;
+    cursor: pointer;
+    }
+    .bottom-container {
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        }

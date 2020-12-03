@@ -1,0 +1,34 @@
+<section>
+    <app-header></app-header>
+
+    <div class="success-container" *ngIf="isSuccess">
+        <p class="success-text-style">{{result.data.status}}</p>
+    </div>
+    <div class="success-container" *ngIf="!isSuccess">
+        <p class="failure-text-style">{{errMsg}}</p>
+    </div>
+
+    <div class="result-text-container">
+        <p class="result-text-style">{{message}}</p>
+    </div>
+
+    <div class="planet-text-container" >
+        <p class="planet-text-style">Planet found : ' {{result.data.planet_name}} '</p>
+    </div>
+
+    <div class="planet-text-container">
+        <p class="planet-text-style">Time Taken : {{timeTaken}} Hr</p>
+    </div>
+
+    <div class="gap-container">
+    </div>
+
+    <div class="footer-container">
+        <button class="submit-button" mat-raised-button [routerLink]="['selection']">Find Again</button>
+    </div>
+</section>
+<div class="bottom-container">
+    <section>
+    <app-footer></app-footer>
+    </section>
+    </div>

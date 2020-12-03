@@ -1,0 +1,56 @@
+<section>
+    <app-header></app-header>
+</section>
+<section>
+    <div class="selection-container">
+        <div class="search-text">
+            <div class="search-text-inner-left">
+                <p class="search-text-left-style">Choose 4 planets and 4 vehicles</p>
+            </div>
+            <div class="search-text-inner-right">
+                <p class="search-text-right-style">Time Taken : {{timeTaken}} hr</p>
+            </div>
+        </div>
+        <div class="dropdown-container">
+            <div class="planet-selection-container">
+                <form class="example-form" *ngFor="let data of selectedData; let i = index">
+                    <mat-form-field class="example-full-width" appearance="none" style="margin-bottom: -0.75em">
+                        <mat-label>Choose planet </mat-label>
+
+                        <input type="text" matInput [matAutocomplete]="auto" [formControl]="planetOneControl"
+                            (ngModelChange)="onPlanetChange(i)">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let planet of data.planetList; let j = index " [value]=planet.name
+                                [disabled]="planet.isPlanetSelected">
+                                {{planet.name}}
+                                <mat-label>(distance-{{planet.distance}})</mat-label>
+                            </mat-option>
+                        </mat-autocomplete>
+
+                    </mat-form-field>
+                </form>
+            </div>
+            <div class="vehicle-selection-container">
+                <form *ngFor="let data of selectedData; let i = index" class="example-form">
+                    <mat-form-field class="example-full-width" appearance="none" style="margin-bottom: -0.75em">
+                        <mat-label>Choose Vehicle </mat-label>
+                        <input type="text" matInput [matAutocomplete]="autos" [formControl]="vehicleControl"
+                            (ngModelChange)="onVehicleChange(i)">
+                        <mat-autocomplete #autos="matAutocomplete">
+                            <mat-option *ngFor="let vehicle of data.vehicleList; let j = index "
+                                [disabled]="vehicle.total_no == 0" [value]=vehicle.name>
+                                {{vehicle.name}} - {{vehicle.total_no}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-container">
+        <button class="submit-button" mat-raised-button (click)="findFalcone()">Find Falcone</button>
+    </div>
+</section>
+<section>
+    <app-footer></app-footer>
+</section>
